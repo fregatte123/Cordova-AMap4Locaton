@@ -32,7 +32,7 @@
     <!-- android -->
     <source-file src="src/android/AMap4LocationPlugin.java"
                  target-dir="src/com/tomisacat/cordova" />
-    <source-file src="src/android/AMap_Location_V2.2.0_20151222.jar" target-dir="libs" />
+    <source-file src="src/android/AMap_Location_V2.4.1_20160414.jar" target-dir="libs" />
 
     <config-file target="AndroidManifest.xml" parent="/manifest">
       <!--用于进行网络定位-->

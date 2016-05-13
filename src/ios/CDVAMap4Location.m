@@ -54,7 +54,14 @@
                                           regeocode.city,@"cityName",
                                           regeocode.citycode,@"cityCode",
                                           regeocode.district,@"districtName",
-                                          regeocode.township,@"roadName",
+                                          //regeocode.township,@"roadName",
+                                          regeocode.formattedAddress,@"addr",
+                                          location.coordinate.latitude,@"lat",
+                                          location.coordinate.longitude,@"lng",
+                                          regeocode.street,@"street",
+                                          regeocode.number,@"streetNum",
+                                          regeocode.POIName,@"poiName",
+                                          regeocode.AOIName,@"aoiName",
                                           nil];
                     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:dict];
                     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];

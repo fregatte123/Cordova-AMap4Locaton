@@ -92,7 +92,17 @@ public class AMap4LocationPlugin extends CordovaPlugin implements AMapLocationLi
                     //地区
                     resultObject.put("districtName",amapLocation.getDistrict());
                     //路或街道
-                    resultObject.put("roadName",amapLocation.getRoad());
+                    //resultObject.put("roadName",amapLocation.getRoad());
+                    //地址 add by lixun
+                    resultObject.put("addr",amapLocation.getAddress());
+                    resultObject.put("lat",amapLocation.getLatitude());
+                    resultObject.put("lng",amapLocation.getLongitude());
+                    resultObject.put("street",amapLocation.getStreet());
+                    resultObject.put("streetNum",amapLocation.getStreetNum());
+                    resultObject.put("aoiName",amapLocation.getAoiName());
+                    resultObject.put("poiName",amapLocation.getPoiName());
+                    
+                    
                     mainCallbackContext.success(resultObject);
                 }else{
                     //错误编码
