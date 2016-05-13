@@ -1,6 +1,8 @@
 高德Cordova 定位插件
 ==
 加深对于Cordova插件的理解编写的Demo例子
+<BR>
+cordova plugin add  /Users/lixun/Documents/bitbucket/Cordova-AMap4Locaton   --variable IOS_APP_KEY=77f0f5924156d376b16482e6b0630d0d   --variable ANDROID_APP_KEY=1255536cc98e9e85dde3fd54baaf6b8c
 <br>
 Android
 --
