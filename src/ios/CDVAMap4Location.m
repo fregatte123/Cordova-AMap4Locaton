@@ -50,19 +50,40 @@
             }else{
                 if (regeocode)
                 {
-                    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:regeocode.province,@"provinceName",
-                                          regeocode.city,@"cityName",
-                                          regeocode.citycode,@"cityCode",
-                                          regeocode.district,@"districtName",
-                                          //regeocode.township,@"roadName",
-                                          regeocode.formattedAddress,@"addr",
-                                          location.coordinate.latitude,@"lat",
-                                          location.coordinate.longitude,@"lng",
-                                          regeocode.street,@"street",
-                                          regeocode.number,@"streetNum",
-                                          regeocode.POIName,@"poiName",
-                                          regeocode.AOIName,@"aoiName",
-                                          nil];
+                    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+                    if(regeocode.province){
+                        [dict setObject:regeocode.province forKey:@"provinceName"];
+                    }
+                    if(regeocode.city){
+                        [dict setObject:regeocode.city forKey:@"cityName"];
+                    }
+                    if(regeocode.citycode){
+                        [dict setObject:regeocode.citycode forKey:@"cityCode"];
+                    }
+                    if(regeocode.district){
+                        [dict setObject:regeocode.district forKey:@"districtName"];
+                    }
+                    if(regeocode.formattedAddress){
+                        [dict setObject:regeocode.formattedAddress forKey:@"addr"];
+                    }
+                    if(location.coordinate.latitude){
+                        [dict setObject: [NSString stringWithFormat:@"%.8f", location.coordinate.latitude] forKey:@"lat"];
+                    }
+                    if(location.coordinate.longitude){
+                        [dict setObject:[NSString stringWithFormat:@"%.8f", location.coordinate.longitude] forKey:@"lng"];
+                    }
+                    if(regeocode.street){
+                        [dict setObject:regeocode.street forKey:@"street"];
+                    }
+                    if(regeocode.number){
+                        [dict setObject:regeocode.number forKey:@"streetNum"];
+                    }
+                    if(regeocode.POIName){
+                        [dict setObject:regeocode.POIName forKey:@"poiName"];
+                    }
+                    if(regeocode.AOIName){
+                        [dict setObject:regeocode.AOIName forKey:@"aoiName"];
+                    }
                     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:dict];
                     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
                 }
